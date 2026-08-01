@@ -1,0 +1,7 @@
+name = "solar-orcamento-api"
+main = "worker/worker.js"
+compatibility_date = "2024-01-01"
+
+# Variáveis de ambiente são definidas via dashboard ou wrangler secret
+# Execute: wrangler secret put GAS_URL
+# Cole a URL do seu Web App do Google Apps Script quando solicitado
