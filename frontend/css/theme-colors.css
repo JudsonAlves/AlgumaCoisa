@@ -1,0 +1,328 @@
+/* frontend/css/theme-colors.css */
+/* Temas - Cores suaves e light */
+
+/* ========== TEMA 1: DARK MODERN (Suave) ========== */
+.theme-dark {
+    --bg-light: #f8f9fa;
+    --bg-dark: #e9ecef;
+    --bg-sidebar: linear-gradient(135deg, #2c3e50 0%, #1a2a3a 100%);
+    --bg-card: #ffffff;
+    --text-dark: #2c3e50;
+    --text-light: #5a6c7e;
+    --text-muted: #8e9eae;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== TEMA 2: NATURE GREEN (Suave) ========== */
+.theme-green {
+    --primary-green: #6c9e4f;
+    --primary-dark: #5a8a3e;
+    --bg-light: #f5f8f2;
+    --bg-dark: #e8f0e2;
+    --bg-sidebar: linear-gradient(135deg, #4a6741 0%, #3a5532 100%);
+    --bg-card: #ffffff;
+    --text-dark: #2c3e2a;
+    --text-light: #5a6e55;
+    --text-muted: #8a9e85;
+}
+
+/* ========== TEMA 3: SUNSET ORANGE (Suave) ========== */
+.theme-orange {
+    --primary-green: #e67e22;
+    --primary-dark: #d35400;
+    --bg-light: #fff8f0;
+    --bg-dark: #fff2e6;
+    --bg-sidebar: linear-gradient(135deg, #c97e4a 0%, #b86a3a 100%);
+    --bg-card: #ffffff;
+    --text-dark: #5a3a2a;
+    --text-light: #8a6a55;
+    --text-muted: #b89a85;
+}
+
+/* ========== TEMA 4: EARTH TONES (Suave) ========== */
+.theme-earth {
+    --primary-green: #9b8e6e;
+    --primary-dark: #8a7a5a;
+    --bg-light: #faf7f0;
+    --bg-dark: #f5efe6;
+    --bg-sidebar: linear-gradient(135deg, #7d6b4a 0%, #6a5a3e 100%);
+    --bg-card: #ffffff;
+    --text-dark: #4a3e2a;
+    --text-light: #7a6e55;
+    --text-muted: #aa9e85;
+}
+
+/* ========== TEMA 5: OCEAN BLUE (Suave) ========== */
+.theme-blue {
+    --primary-green: #5d9b9b;
+    --primary-dark: #4a8a8a;
+    --bg-light: #f0f7fa;
+    --bg-dark: #e6f0f5;
+    --bg-sidebar: linear-gradient(135deg, #4a7a7a 0%, #3a6a6a 100%);
+    --bg-card: #ffffff;
+    --text-dark: #2a4a5a;
+    --text-light: #5a7a85;
+    --text-muted: #8aaab5;
+}
+
+/* ========== TEMA 6: COPPER ROSE (Suave) ========== */
+.theme-copper {
+    --primary-green: #b87333;
+    --primary-dark: #a86223;
+    --bg-light: #fef8f0;
+    --bg-dark: #fdf0e6;
+    --bg-sidebar: linear-gradient(135deg, #b87a5a 0%, #a86a4a 100%);
+    --bg-card: #ffffff;
+    --text-dark: #5a3a2e;
+    --text-light: #8a6a5a;
+    --text-muted: #ba9a85;
+}
+
+/* ========== ESTILOS GLOBAIS DOS TEMAS ========== */
+/* Garantir que os cards e elementos usem as cores corretas */
+
+.theme-dark .card,
+.theme-green .card,
+.theme-orange .card,
+.theme-earth .card,
+.theme-blue .card,
+.theme-copper .card {
+    background: var(--bg-card);
+    color: var(--text-dark);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.theme-dark .main-content,
+.theme-green .main-content,
+.theme-orange .main-content,
+.theme-earth .main-content,
+.theme-blue .main-content,
+.theme-copper .main-content {
+    background: var(--bg-light);
+}
+
+/* Formulários */
+.theme-dark .form-control,
+.theme-green .form-control,
+.theme-orange .form-control,
+.theme-earth .form-control,
+.theme-blue .form-control,
+.theme-copper .form-control {
+    background: var(--bg-card);
+    color: var(--text-dark);
+    border: 1px solid #e0e0e0;
+}
+
+.theme-dark .form-control:focus,
+.theme-green .form-control:focus,
+.theme-orange .form-control:focus,
+.theme-earth .form-control:focus,
+.theme-blue .form-control:focus,
+.theme-copper .form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(108, 158, 79, 0.1);
+}
+
+/* Listas */
+.theme-dark .list-item,
+.theme-green .list-item,
+.theme-orange .list-item,
+.theme-earth .list-item,
+.theme-blue .list-item,
+.theme-copper .list-item {
+    background: var(--bg-card);
+    color: var(--text-dark);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.theme-dark .list-item:hover,
+.theme-green .list-item:hover,
+.theme-orange .list-item:hover,
+.theme-earth .list-item:hover,
+.theme-blue .list-item:hover,
+.theme-copper .list-item:hover {
+    background: var(--bg-light);
+}
+
+/* Itens selecionados */
+.theme-dark .selected-item,
+.theme-green .selected-item,
+.theme-orange .selected-item,
+.theme-earth .selected-item,
+.theme-blue .selected-item,
+.theme-copper .selected-item {
+    background: var(--bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .selected-item:hover,
+.theme-green .selected-item:hover,
+.theme-orange .selected-item:hover,
+.theme-earth .selected-item:hover,
+.theme-blue .selected-item:hover,
+.theme-copper .selected-item:hover {
+    border-color: var(--primary-green);
+    background: rgba(108, 158, 79, 0.05);
+}
+
+/* Botões em todos os temas */
+.theme-dark .btn-primary,
+.theme-green .btn-primary,
+.theme-orange .btn-primary,
+.theme-earth .btn-primary,
+.theme-blue .btn-primary,
+.theme-copper .btn-primary {
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-dark));
+    color: white;
+}
+
+.theme-dark .btn-primary:hover,
+.theme-green .btn-primary:hover,
+.theme-orange .btn-primary:hover,
+.theme-earth .btn-primary:hover,
+.theme-blue .btn-primary:hover,
+.theme-copper .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 158, 79, 0.3);
+}
+
+.theme-dark .btn-secondary,
+.theme-green .btn-secondary,
+.theme-orange .btn-secondary,
+.theme-earth .btn-secondary,
+.theme-blue .btn-secondary,
+.theme-copper .btn-secondary {
+    background: #9aa6b5;
+    color: white;
+}
+
+.theme-dark .btn-secondary:hover,
+.theme-green .btn-secondary:hover,
+.theme-orange .btn-secondary:hover,
+.theme-earth .btn-secondary:hover,
+.theme-blue .btn-secondary:hover,
+.theme-copper .btn-secondary:hover {
+    background: #8a95a5;
+}
+
+.theme-dark .btn-small,
+.theme-green .btn-small,
+.theme-orange .btn-small,
+.theme-earth .btn-small,
+.theme-blue .btn-small,
+.theme-copper .btn-small {
+    background: var(--primary-green);
+    color: white;
+}
+
+.theme-dark .btn-small:hover,
+.theme-green .btn-small:hover,
+.theme-orange .btn-small:hover,
+.theme-earth .btn-small:hover,
+.theme-blue .btn-small:hover,
+.theme-copper .btn-small:hover {
+    background: var(--primary-dark);
+}
+
+/* Cards de resultado */
+.theme-dark .results-card,
+.theme-green .results-card,
+.theme-orange .results-card,
+.theme-earth .results-card,
+.theme-blue .results-card,
+.theme-copper .results-card {
+    background: linear-gradient(135deg, rgba(108, 158, 79, 0.05) 0%, rgba(108, 158, 79, 0.02) 100%);
+    border-left: 3px solid var(--primary-green);
+}
+
+/* Resultado items */
+.theme-dark .resultado-item strong,
+.theme-green .resultado-item strong,
+.theme-orange .resultado-item strong,
+.theme-earth .resultado-item strong,
+.theme-blue .resultado-item strong,
+.theme-copper .resultado-item strong {
+    color: var(--primary-green);
+}
+
+/* Modais */
+.theme-dark .modal-content,
+.theme-green .modal-content,
+.theme-orange .modal-content,
+.theme-earth .modal-content,
+.theme-blue .modal-content,
+.theme-copper .modal-content {
+    background: var(--bg-card);
+    color: var(--text-dark);
+}
+
+/* Chat e Terminal */
+.theme-dark .chat-window,
+.theme-green .chat-window,
+.theme-orange .chat-window,
+.theme-earth .chat-window,
+.theme-blue .chat-window,
+.theme-copper .chat-window {
+    background: var(--bg-card);
+}
+
+.theme-dark .chat-messages,
+.theme-green .chat-messages,
+.theme-orange .chat-messages,
+.theme-earth .chat-messages,
+.theme-blue .chat-messages,
+.theme-copper .chat-messages {
+    background: var(--bg-light);
+}
+
+.theme-dark .message.assistente .message-content,
+.theme-green .message.assistente .message-content,
+.theme-orange .message.assistente .message-content,
+.theme-earth .message.assistente .message-content,
+.theme-blue .message.assistente .message-content,
+.theme-copper .message.assistente .message-content {
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
+}
+
+/* Scrollbar para todos os temas */
+.theme-dark ::-webkit-scrollbar-track,
+.theme-green ::-webkit-scrollbar-track,
+.theme-orange ::-webkit-scrollbar-track,
+.theme-earth ::-webkit-scrollbar-track,
+.theme-blue ::-webkit-scrollbar-track,
+.theme-copper ::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb,
+.theme-green ::-webkit-scrollbar-thumb,
+.theme-orange ::-webkit-scrollbar-thumb,
+.theme-earth ::-webkit-scrollbar-thumb,
+.theme-blue ::-webkit-scrollbar-thumb,
+.theme-copper ::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+
+/* ========== GARANTIR QUE AS PÁGINAS FUNCIONEM ========== */
+.theme-dark .page,
+.theme-green .page,
+.theme-orange .page,
+.theme-earth .page,
+.theme-blue .page,
+.theme-copper .page {
+    display: none;
+}
+
+.theme-dark .page.active,
+.theme-green .page.active,
+.theme-orange .page.active,
+.theme-earth .page.active,
+.theme-blue .page.active,
+.theme-copper .page.active {
+    display: block;
+}

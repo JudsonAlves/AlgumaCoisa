@@ -1,0 +1,116 @@
+<div class="page-container">
+    <div class="page-header">
+        <h1>Placas Solares</h1>
+        <p>Gerencie as placas solares do sistema</p>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">Nova Placa</div>
+        <div class="form-grid-compact">
+            <div class="floating-group">
+                <input type="text" id="placaMarca" placeholder=" ">
+                <label>Marca</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="placaModelo" placeholder=" ">
+                <label>Modelo</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="placaPotencia" placeholder=" ">
+                <label>Potência (W)</label>
+            </div>
+            <div class="floating-group">
+                <select id="placaTipo">
+                    <option>MONOFACIAL</option>
+                    <option>BIFACIAL</option>
+                    <option>MONOCRISTALINO</option>
+                    <option>N TYPE</option>
+                    <option>N TYPE BIFACIAL</option>
+                </select>
+                <label>Tipo</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="placaAltura" value="2.382" placeholder=" ">
+                <label>Altura (m)</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="placaLargura" value="1.134" placeholder=" ">
+                <label>Largura (m)</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="placaGarantia" value="12" placeholder=" ">
+                <label>Garantia (anos)</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="placaGarantiaGer" value="25" placeholder=" ">
+                <label>Garantia Geração (anos)</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="placaInmetro" value="000000/2000" placeholder=" ">
+                <label>INMETRO</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="placaOutros" placeholder=" ">
+                <label>Outras Informações</label>
+            </div>
+            
+            <!-- ÁREA DE UPLOAD DE IMAGEM COM INDICADOR VISUAL -->
+            <div class="floating-group image-upload full-width">
+                <label>Imagem da Placa</label>
+                <input type="file" id="placaImagem" accept="image/*" style="display: none;">
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <button type="button" class="btn btn-small" id="btnSelecionarImagemPlaca" onclick="abrirSelecaoImagemPlaca()">
+                        <i data-lucide="image"></i> Selecionar Imagem
+                    </button>
+                    <div id="statusUploadPlaca" style="display: none; font-size: 12px; padding: 4px 8px; border-radius: 4px;">
+                        <!-- Status será preenchido aqui -->
+                    </div>
+                </div>
+                <div id="previewImagem" class="image-preview" style="display: none; margin-top: 10px;">
+                    <img id="previewImg" style="max-width: 100px; max-height: 100px; object-fit: contain;">
+                    <button type="button" class="btn-icon" onclick="removerImagem()">✗</button>
+                </div>
+                <div id="progressoImagemPlaca" style="display: none; margin-top: 8px;">
+                    <div style="background: #f0f0f0; border-radius: 4px; overflow: hidden;">
+                        <div id="barraProgressoPlaca" style="width: 0%; height: 4px; background: #2ecc71; transition: width 0.3s;"></div>
+                    </div>
+                    <span id="statusProgressoPlaca" style="font-size: 11px; color: #666;"></span>
+                </div>
+                <small>Imagem será redimensionada para 500x500px, com fundo removido automaticamente</small>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" id="btnCadastrarPlaca" onclick="cadastrarPlaca()">Cadastrar</button>
+        </div>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">
+            <span>Filtros</span>
+        </div>
+        <div class="config-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="floating-group">
+                <select id="filtroMarcaPlaca" onchange="filtrarPlacas()">
+                    <option value="">Todas as Marcas</option>
+                </select>
+                <label>Marca</label>
+            </div>
+            <div class="floating-group">
+                <select id="filtroTipoPlaca" onchange="filtrarPlacas()">
+                    <option value="">Todos os Tipos</option>
+                    <option>MONOFACIAL</option>
+                    <option>BIFACIAL</option>
+                    <option>MONOCRISTALINO</option>
+                    <option>N TYPE</option>
+                    <option>N TYPE BIFACIAL</option>
+                </select>
+                <label>Tipo</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">Lista de Placas</div>
+        <div id="listaPlacasContent" class="lista-itens-container"></div>
+    </div>
+</div>

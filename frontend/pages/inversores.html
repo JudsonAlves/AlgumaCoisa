@@ -1,0 +1,141 @@
+<div class="page-container">
+    <div class="page-header">
+        <h1>Inversores</h1>
+        <p>Gerencie os inversores do sistema</p>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">Novo Inversor</div>
+        <div class="form-grid-compact">
+            <div class="floating-group">
+                <input type="text" id="invMarca" placeholder=" ">
+                <label>Marca</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="invModelo" placeholder=" ">
+                <label>Modelo</label>
+            </div>
+            <div class="floating-group">
+                <select id="invTipo">
+                    <option>ONGRID</option>
+                    <option>OFFGRID</option>
+                    <option>HIBRIDO</option>
+                    <option>MICRO</option>
+                    <option>CONTROLADOR OFFGRID</option>
+                </select>
+                <label>Tipo</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="invPotencia" placeholder=" " step="100">
+                <label>Potência (W)</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="invPotenciaMin" placeholder=" ">
+                <label>Potência Mínima (W) - Opcional</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="invPotenciaMax" placeholder=" ">
+                <label>Potência Máxima (W) - Opcional</label>
+            </div>
+            <div class="floating-group">
+                <select id="invTensao">
+                    <option value="">Automático (baseado na potência)</option>
+                    <option value="220">220V</option>
+                    <option value="380">380V</option>
+                    <option value="127">127V</option>
+                </select>
+                <label>Tensão</label>
+            </div>
+            <div class="floating-group">
+                <select id="invFase">
+                    <option value="">Automático (baseado na potência)</option>
+                    <option>MONOFÁSICO</option>
+                    <option>BIFÁSICO</option>
+                    <option>TRIFÁSICO</option>
+                </select>
+                <label>Fase</label>
+            </div>
+            <div class="floating-group">
+                <input type="number" id="invGarantia" value="10" placeholder=" ">
+                <label>Garantia (anos)</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="invInmetro" placeholder=" ">
+                <label>INMETRO</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="invOutros" placeholder=" ">
+                <label>Outros (Informações adicionais)</label>
+            </div>
+            
+            <!-- ÁREA DE UPLOAD DE IMAGEM COM INDICADOR VISUAL -->
+            <div class="floating-group image-upload full-width">
+                <label>Imagem do Inversor</label>
+                <input type="file" id="invImagem" accept="image/*" style="display: none;">
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <button type="button" class="btn btn-small" id="btnSelecionarImagemInversor" onclick="abrirSelecaoImagemInversor()">
+                        <i data-lucide="image"></i> Selecionar Imagem
+                    </button>
+                    <div id="statusUploadInversor" style="display: none; font-size: 12px; padding: 4px 8px; border-radius: 4px;">
+                        <!-- Status será preenchido aqui -->
+                    </div>
+                </div>
+                <div id="previewImagemInversor" class="image-preview" style="display: none; margin-top: 10px;">
+                    <img id="previewImgInversor" style="max-width: 100px; max-height: 100px; object-fit: contain;">
+                    <button type="button" class="btn-icon" onclick="removerImagemInversor()">✗</button>
+                </div>
+                <div id="progressoImagemInversor" style="display: none; margin-top: 8px;">
+                    <div style="background: #f0f0f0; border-radius: 4px; overflow: hidden;">
+                        <div id="barraProgressoInversor" style="width: 0%; height: 4px; background: #2ecc71; transition: width 0.3s;"></div>
+                    </div>
+                    <span id="statusProgressoInversor" style="font-size: 11px; color: #666;"></span>
+                </div>
+                <small>Imagem será redimensionada para 500x500px, com fundo removido automaticamente</small>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" id="btnCadastrarInversor" onclick="cadastrarInversor()">Cadastrar</button>
+        </div>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">
+            <span>Filtros</span>
+        </div>
+        <div class="config-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="floating-group">
+                <select id="filtroMarcaInversor" onchange="filtrarInversores()">
+                    <option value="">Todas as Marcas</option>
+                </select>
+                <label>Marca</label>
+            </div>
+            <div class="floating-group">
+                <select id="filtroTipoInversor" onchange="filtrarInversores()">
+                    <option value="">Todos os Tipos</option>
+                    <option>ONGRID</option>
+                    <option>OFFGRID</option>
+                    <option>HIBRIDO</option>
+                    <option>MICRO</option>
+                    <option>CONTROLADOR OFFGRID</option>
+                </select>
+                <label>Tipo</label>
+            </div>
+            <div class="floating-group">
+                <select id="filtroPotenciaInversor" onchange="filtrarInversores()">
+                    <option value="">Todas as Potências</option>
+                    <option value="0-3000">Até 3kW</option>
+                    <option value="3001-5000">3kW - 5kW</option>
+                    <option value="5001-10000">5kW - 10kW</option>
+                    <option value="10001-15000">10kW - 15kW</option>
+                    <option value="15000+">Acima de 15kW</option>
+                </select>
+                <label>Potência</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">Lista de Inversores</div>
+        <div id="listaInversoresContent" class="lista-itens-container"></div>
+    </div>
+</div>

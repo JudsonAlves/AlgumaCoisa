@@ -1,0 +1,44 @@
+<div class="page-container">
+    <div class="page-header">
+        <h1>Clientes</h1>
+        <p>Gerencie seus clientes</p>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">Novo Cliente</div>
+        <div class="form-grid-compact">
+            <div class="floating-group">
+                <input type="text" id="clienteNome" placeholder=" ">
+                <label>Nome</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="clienteCpf" placeholder=" ">
+                <label>CPF/CNPJ</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="clienteTelefone" placeholder=" ">
+                <label>Telefone</label>
+            </div>
+            <div class="floating-group">
+                <input type="email" id="clienteEmail" placeholder=" ">
+                <label>Email</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="clienteEndereco" placeholder=" ">
+                <label>Endereço</label>
+            </div>
+            <div class="floating-group">
+                <input type="text" id="clienteCidade" placeholder=" ">
+                <label>Cidade</label>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" onclick="cadastrarCliente()">Cadastrar</button>
+        </div>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">Lista de Clientes</div>
+        <div id="listaClientesContent" class="lista-itens-container"></div>
+    </div>
+</div>

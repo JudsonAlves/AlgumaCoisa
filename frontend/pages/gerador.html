@@ -1,0 +1,61 @@
+<div class="page-container">
+    <div class="page-header">
+        <h1>Gerador de Kits Fotovoltaicos</h1>
+        <p>Gere combinações de placas e inversores automaticamente</p>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">
+            <span class="icon"><i data-lucide="settings"></i></span>
+            <span>Parâmetros</span>
+        </div>
+        <div class="parametros-grid">
+            <div class="floating-group">
+                <input type="number" id="dimensionamentoValor" placeholder=" ">
+                <label>Consumo/Potência</label>
+            </div>
+            <div class="floating-group">
+                <select id="geradorFase">
+                    <option>MONOFASICO 220V</option>
+                    <option>BIFÁSICO 220V</option>
+                    <option>TRIFÁSICO 220V</option>
+                    <option>TRIFÁSICO 380V</option>
+                </select>
+                <label>Fases</label>
+            </div>
+            <div class="floating-group">
+                <select id="geradorCidade">
+                    <option>Imperatriz - MA</option>
+                    <option>São Luís - MA</option>
+                    <option>Teresina - PI</option>
+                </select>
+                <label>Cidade</label>
+            </div>
+            <div class="floating-group">
+                <select id="geradorEstrutura">
+                    <option>TELHADO CERÂMICO / COLONIAL</option>
+                    <option>TELHADO METÁLICO</option>
+                    <option>SOLO</option>
+                </select>
+                <label>Estrutura</label>
+            </div>
+        </div>
+        <div class="parametro-opcoes">
+            <button class="opcao-btn active" onclick="alterarTipoDimensionamento('kwh')">📈 kWh (Consumo)</button>
+            <button class="opcao-btn" onclick="alterarTipoDimensionamento('kwp')">⚡ kWp (Potência)</button>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" id="btnGerarKits" onclick="gerarKits()">🔍 Gerar Kits</button>
+        </div>
+    </div>
+
+    <div class="card compact">
+        <div class="card-title">
+            <span class="icon"><i data-lucide="package"></i></span>
+            <span>Kits Gerados</span>
+        </div>
+        <div id="listaKitsGerados" class="kits-grid">
+            <div class="loading">Clique em "Gerar Kits" para começar</div>
+        </div>
+    </div>
+</div>

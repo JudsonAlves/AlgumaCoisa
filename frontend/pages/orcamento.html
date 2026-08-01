@@ -1,0 +1,279 @@
+<div class="page-container">
+    <div class="page-header">
+        <h1>Proposta de Sistema Solar</h1>
+        <p>Configure e gere sua proposta comercial</p>
+    </div>
+
+    <!-- Cards de Seleção -->
+    <div class="selecao-grid">
+        <!-- Card Placa -->
+        <div class="card compact selecao-card">
+            <div class="card-title">
+                <span class="icon"><i data-lucide="grid-3x2"></i></span>
+                <span>Placa Solar</span>
+                <button class="btn-small" onclick="abrirCadastroPlaca()">+</button>
+            </div>
+            <div id="placaSelecionada" class="selected-item compact empty" onclick="abrirModalPlacas()">
+                Clique para selecionar
+            </div>
+            <div id="placaQuantidadeGroup" class="quantidade-group" style="display: none;">
+                <div class="floating-group">
+                    <input type="number" id="placaQuantidade" value="1" min="1" placeholder=" " onchange="aoMudarPlacas()">
+                    <label>Quantidade de Placas</label>
+                </div>
+            </div>
+            <div id="detalhesPlaca" style="display: none;">
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Potência:</span>
+                    <span class="detalhe-valor" id="placaPotenciaDetalhe">0 W</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Garantia:</span>
+                    <span class="detalhe-valor" id="placaGarantiaDetalhe">0 anos</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Garantia Geração:</span>
+                    <span class="detalhe-valor" id="placaGarantiaGerDetalhe">0 anos</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Fator de Geração:</span>
+                    <span class="detalhe-valor" id="placaFatorGeracaoDetalhe">0 kWh</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Dimensões:</span>
+                    <span class="detalhe-valor" id="placaDimensoes">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Outros:</span>
+                    <span class="detalhe-valor" id="placaOutrosDetalhe">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Inversor -->
+        <div class="card compact selecao-card">
+            <div class="card-title">
+                <span class="icon"><i data-lucide="book-minus"></i></span>
+                <span>Inversor</span>
+                <button class="btn-small" onclick="abrirCadastroInversor()">+</button>
+            </div>
+            <div id="inversorSelecionado" class="selected-item compact empty" onclick="abrirModalInversores()">
+                Clique para selecionar
+            </div>
+            <div id="inversorQuantidadeGroup" class="quantidade-group" style="display: none;">
+                <div class="floating-group">
+                    <input type="number" id="inversorQuantidade" value="1" min="1" placeholder=" " onchange="aoMudarInversorQuantidade()">
+                    <label>Quantidade de Inversores</label>
+                </div>
+            </div>
+            <div id="detalhesInversor" style="display: none;">
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Tipo:</span>
+                    <span class="detalhe-valor" id="inversorTipoDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Potência:</span>
+                    <span class="detalhe-valor" id="inversorPotenciaDetalhe">0 W</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Potência Mínima:</span>
+                    <span class="detalhe-valor" id="inversorPotenciaMinDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Potência Máxima:</span>
+                    <span class="detalhe-valor" id="inversorPotenciaMaxDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Tensão:</span>
+                    <span class="detalhe-valor" id="inversorTensaoDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Fase:</span>
+                    <span class="detalhe-valor" id="inversorFaseDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Garantia:</span>
+                    <span class="detalhe-valor" id="inversorGarantiaDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">INMETRO:</span>
+                    <span class="detalhe-valor" id="inversorInmetroDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Outros:</span>
+                    <span class="detalhe-valor" id="inversorOutrosDetalhe">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Bateria -->
+        <div class="card compact selecao-card">
+            <div class="card-title">
+                <span class="icon"><i data-lucide="battery-full"></i></span>
+                <span>Bateria</span>
+                <button class="btn-small" onclick="abrirCadastroBateria()">+</button>
+            </div>
+            <div id="bateriaSelecionada" class="selected-item compact empty" onclick="abrirModalBaterias()">
+                Opcional
+            </div>
+            <div id="bateriaQuantidadeGroup" class="quantidade-group" style="display: none;">
+                <div class="floating-group">
+                    <input type="number" id="bateriaQuantidade" value="0" min="0" placeholder=" " onchange="aoMudarParametro()">
+                    <label>Quantidade de Baterias</label>
+                </div>
+            </div>
+            <div id="detalhesBateria" style="display: none;">
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Tipo:</span>
+                    <span class="detalhe-valor" id="bateriaTipoDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Capacidade:</span>
+                    <span class="detalhe-valor" id="bateriaCapacidadeDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Tensão:</span>
+                    <span class="detalhe-valor" id="bateriaTensaoDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Garantia:</span>
+                    <span class="detalhe-valor" id="bateriaGarantiaDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">INMETRO:</span>
+                    <span class="detalhe-valor" id="bateriaInmetroDetalhe">-</span>
+                </div>
+                <div class="detalhe-linha">
+                    <span class="detalhe-label">Outros:</span>
+                    <span class="detalhe-valor" id="bateriaOutrosDetalhe">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Configurações -->
+    <div class="card full-width config-card">
+        <div class="card-title">
+            <span class="icon"><i data-lucide="cog"></i></span>
+            <span>Configurações</span>
+        </div>
+        <div class="config-grid">
+            <div class="floating-group">
+                <select id="estruturaFixa" onchange="aoMudarParametro()">
+                    <option>TELHADO CERÂMICO / COLONIAL</option>
+                    <option>TELHADO METÁLICO</option>
+                    <option>SOLO</option>
+                    <option>SOLO LASTRO</option>
+                    <option>LAJE</option>
+                </select>
+                <label>Estrutura</label>
+            </div>
+            <div class="floating-group">
+                <select id="recallInversor" onchange="aoMudarParametro()">
+                    <option>Nenhum</option>
+                    <option>Recall 2023</option>
+                    <option>Recall 2024</option>
+                </select>
+                <label>Recall</label>
+            </div>
+            <div class="floating-group">
+                <select id="vendedor" onchange="aoMudarParametro()">
+                    <option>01 - JUAN</option>
+                    <option>02 - JUDSON</option>
+                    <option>03 - MARCOS</option>
+                    <option>04 - CAMILA</option>
+                    <option>05 - RODRIGO</option>
+                    <option>06 - JORGE</option>
+                    <option>07 - CASSIA</option>
+                    <option>08 - ITHALO</option>
+                    <option>09 - ALEX</option>
+                </select>
+                <label>Vendedor</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parâmetros e Resultados -->
+    <div class="orcamento-grid">
+        <div class="orcamento-coluna-esquerda">
+            <div class="card compact">
+                <div class="card-title"><span class="icon"><i data-lucide="hand-coins"></i></span><span>Parâmetros</span></div>
+                <div class="parametros-grid">
+                    <div class="floating-group">
+                        <input type="number" id="geracaoRequerida" placeholder=" " oninput="aoMudarGeracao()">
+                        <label>Geração Requerida (kWh)</label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="text" id="valorFornecimento" placeholder=" " oninput="aoMudarParametro()">
+                        <label>Fornecimento (R$)</label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="text" id="margem" value="4" placeholder=" " oninput="aoMudarParametro()">
+                        <label>Margem (%)</label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="text" id="imposto" value="43" placeholder=" " oninput="aoMudarParametro()">
+                        <label>Imposto (%)</label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="text" id="reajuste" value="150" placeholder=" " oninput="aoMudarParametro()">
+                        <label>Reajuste (R$)</label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="text" id="desconto" value="0" placeholder=" " oninput="aoMudarParametro()">
+                        <label>Desconto (R$)</label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="text" id="acrescimo" value="0" placeholder=" " oninput="aoMudarParametro()">
+                        <label>Acréscimo (R$)</label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="text" id="frete" value="0" placeholder=" " oninput="aoMudarParametro()">
+                        <label>Frete (R$)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="arredondamentoAuto" checked onchange="aoMudarParametro()">
+                            Arredondar automaticamente
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="orcamento-coluna-direita">
+            <div class="card compact results-card">
+                <div class="card-title"><span class="icon"><i data-lucide="square-chart-gantt"></i></span><span>Resultados</span></div>
+                <div class="resultados-grid">
+                    <div class="resultado-item"><span>Quantidade de Placas:</span><strong id="qtdePlacas">0</strong></div>
+                    <div class="resultado-item"><span>Potência do Kit:</span><strong id="potenciaKit">0 kWp</strong></div>
+                    <div class="resultado-item"><span>Geração Estimada:</span><strong id="geracaoEstimada">0 kWh</strong></div>
+                    <div class="resultado-item"><span>Quantidade Inversores:</span><strong id="qtdeInversores">0</strong></div>
+                    <div class="resultado-item"><span>Valor com Imposto:</span><strong id="valorComImposto">R$ 0,00</strong></div>
+                    <div class="resultado-item"><span>Valor Final:</span><strong id="valorFinal">R$ 0,00</strong></div>
+                    <div class="resultado-item"><span>Valor Total Orçamento:</span><strong id="valorTotalOrc">R$ 0,00</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de Resumo -->
+    <div class="card compact full-width lista-resumo-card">
+        <div class="card-title">
+            <span class="icon"><i data-lucide="list"></i></span>
+            <span>Lista de Orçamentos</span>
+            <button class="btn-small" onclick="gerarMultiplosOrcamentos()">Gerar Todos</button>
+        </div>
+        <div id="listaResumoItems" class="lista-resumo-items">
+            <div class="empty-list">Nenhum item na lista</div>
+        </div>
+    </div>
+
+    <!-- Botões de Ação -->
+    <div class="actions">
+        <button class="btn btn-secondary" onclick="limparOrcamento()">Limpar</button>
+        <button class="btn btn-primary" onclick="adicionarListaResumo()">Adicionar à Lista</button>
+        <button class="btn btn-primary" onclick="gerarPDF()">Gerar PDF</button>
+        <button class="btn btn-success" onclick="abrirModalResumo()"><i data-lucide="eye"></i> Ver Resumo Completo</button>
+    </div>
+</div>

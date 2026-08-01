@@ -1,0 +1,132 @@
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .selecao-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .config-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .selecao-grid {
+        gap: 12px;
+    }
+    
+    .config-grid {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar .logo h2,
+    .sidebar .logo p,
+    .sidebar .nav-item span:last-child,
+    .sidebar .nav-footer .nav-item span:last-child {
+        display: none;
+    }
+    
+    .sidebar .nav-item,
+    .sidebar .nav-footer .nav-item {
+        justify-content: center;
+        padding: 8px;
+    }
+    
+    .sidebar .nav-item .icon {
+        margin-right: 0;
+    }
+    
+    .sidebar .submenu {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 12px;
+    }
+    
+    .selecao-grid,
+    .config-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .orcamento-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .parametros-grid,
+    .form-grid-compact {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .resultados-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .modal-resumo-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .modal-resumo-header h2 {
+        font-size: 12px;
+    }
+    
+    .resumo-grid,
+    .valores-grid,
+    .equipamentos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .resumo-card.full-width {
+        grid-column: span 1;
+    }
+    
+    .investimento-valor-modal {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 10px;
+    }
+    
+    .card-title {
+        font-size: 11px;
+    }
+    
+    .btn, button:not(.modal-close) {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    .floating-group input,
+    .floating-group select {
+        padding: 8px 8px 5px 8px;
+        font-size: 11px;
+    }
+    
+    .floating-group label {
+        font-size: 10px;
+    }
+    
+    .resultado-item {
+        font-size: 10px;
+    }
+}
